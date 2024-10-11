@@ -1,0 +1,18 @@
+<a href="{% url 'all_posts' %}">Get back</a>
+<h1>{{ profile_user.username }} Profile</h1>
+<p><strong>Bio: </strong>{{ profile_user.profile.bio}}</p>
+{% if profile_user.profile.profile_pic %}
+<strong>Profile pic: </strong><br><img src ="{{ profile_user.profile.profile_pic.url }}" alt='photo' width="200" height=200">
+{% else %}
+<strong>No profile pic =(</strong>
+{% endif %}
+<a href ="{% url "profile_edit" %}"><h2>Edit your profile</h2></a>
+{#<form action="{% url "follow_user" profile_user.username %}" method="post">#}
+{#    {% csrf_token %}#}
+{#    <button type="submit">Follow</button>#}
+{#</form>#}
+{##}
+{#<form action="{% url 'unfollow_user' profile_user.username %}" method="post">#}
+{#    {% csrf_token %}#}
+{#    <button type="submit">Unfollow</button>#}
+{#</form>#}

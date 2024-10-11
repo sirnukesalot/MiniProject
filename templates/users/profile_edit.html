@@ -1,0 +1,10 @@
+{%  if user.is_authenticated %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for ="bio">Bio</label>
+    <textarea id="bio" name="bio">{{ profile_user.profile.bio }}</textarea><br><br>
+    <label for ="profile_pic">Photo</label>
+    <input type="file" id="profile_pic" name="profile_pic"><br><br>
+    <button type="submit">Save</button>
+</form>
+{% endif %}
